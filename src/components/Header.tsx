@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
 import { HiLightningBolt } from "react-icons/hi";
 import Image from "next/image";
 
@@ -26,8 +25,7 @@ const Header = () => {
   const opacity = Math.max(1 - scrollY / 400, 0.2); // Adjust opacity based on scroll position
 
   return (
-    <section className="w-full md:px-64 py-10 items-center justify-center relative flex flex-col md:gap-6 gap-4 bg-gradient-to-r from-[#F0E9FD] via-white to-[#FEEBF2]">
-      <Navbar />
+    <section className="w-full md:px-80 py-10 items-center justify-center relative flex flex-col md:gap-6 gap-4 bg-gradient-to-r from-[#F0E9FD] via-white to-[#FEEBF2]">
       <div
         style={{
           opacity,
@@ -38,11 +36,11 @@ const Header = () => {
         <h1 className="hidden md:mt-24 md:text-[#000C60] md:mb-5 md:font-onest md:text-3xl md:leading-8 md:font-bold md:block">
           My resa
         </h1>
-        <h2 className="mt-8 md:mt-0 font-onest font-extrabold md:text-7xl text-6xl leading-tight text-center text-[#000c60]">
-          Premier logiciel de gestion spécialement conçu pour
+        <h2 className="mt-8 md:mt-0 font-onest font-extrabold md:text-6xl text-6xl leading-tight text-center text-[#000c60]">
+          Premier logiciel de gestion complet spécialement conçu pour
         </h2>
         <Image
-          className="md:absolute md:top-52 md:left-52 md:animate-spinOpacity md:block hidden"
+          className="md:absolute md:top-48 md:left-28 md:animate-spinOpacity md:block hidden"
           alt="decorative shape"
           src="/assets/shape.svg"
           width={20}

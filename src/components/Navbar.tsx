@@ -5,7 +5,6 @@ import Image from "next/image";
 import { HiBars3 } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -24,7 +23,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", changeBackground);
     };
-  }, []);
+  }, [window.scrollY]);
 
   const variants = {
     open: { y: 0 },
@@ -33,8 +32,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full md:h-24  z-10 font-onest items-center justify-between md:justify-center px-3 flex gap-8 transition-all duration-600 ${
-        navbar ? "bg-white h-16 shadow-md top-0" : "bg-transparent top-10 h-20"
+      className={`fixed w-full h-16 md:h-24 z-50 font-onest items-center justify-between md:justify-center px-3 flex gap-8 transition-all duration-600 ${
+        navbar ? "bg-white shadow-md top-0" : "bg-transparent top-10"
       }`}
     >
       <div className="relative flex md:hidden">
@@ -73,7 +72,28 @@ const Navbar = () => {
           </div>
         )}
 
-        <motion.div
+        {showMenu && (
+          <div className="bg-white w-full min-w-96 absolute top-8 left-0 rounded-xl">
+            <ul className="w-full h-full p-6 flex flex-col items-center justify-around gap-8 text-base text-[#050d61]">
+              <li className="w-full flex justify-center cursor-pointer">
+                Acceuil
+              </li>
+              <li className="w-full flex justify-center cursor-pointer">
+                Présentation
+              </li>
+              <li className="w-full flex justify-center cursor-pointer">
+                Fonctionalités
+              </li>
+              <li className="w-full flex justify-center cursor-pointer">
+                Abonnements
+              </li>
+              <li className="w-full flex justify-center cursor-pointer">
+                Contact
+              </li>
+            </ul>
+          </div>
+        )}
+        {/* <motion.div
           initial="closed"
           animate={showMenu ? "open" : "closed"}
           variants={variants}
@@ -96,7 +116,7 @@ const Navbar = () => {
               Contact
             </li>
           </ul>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <Image

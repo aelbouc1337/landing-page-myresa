@@ -20,6 +20,7 @@ const ScrolledCard = () => {
       <h3 className=" md:mt-24 font-bold text-2xl font-onest text-[#64698e] leading-7 text-center">
         Application Windows & Mac
       </h3>
+      <hr className="w-[70%] md:w-[40%] mt-5 mx-auto" />
     </div>
   );
 };
